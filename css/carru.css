@@ -1,0 +1,96 @@
+.carousel-inner {
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    justify-content: center;
+    
+    }
+    
+    
+    .body{
+        background-color: black;
+    }
+    
+    .carousel{
+    width: 100%;
+    margin: 0 auto;
+    padding: auto;
+    
+    }
+    
+.img{
+    text-align: center;
+    justify-content: center;
+}
+
+.nombre {
+    font-weight: bold;
+        color: red;
+        font-style: italic;
+        font-size: 30px;
+    }
+
+.descripcion{
+    color: white;
+}
+
+.precio{
+    font-size: 25px;
+    font-weight: bold;
+    color: orange;
+}
+
+.bts{
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    padding-top: 18px;
+}
+.bt{
+ 
+    font-weight: bold;
+    border: none;
+    background-color: orange;
+    border-radius: 15px;
+    width: 130px;
+    height: 45px;
+}
+.bt:hover{
+    color: black;
+    background-color: white;
+    border-radius: 50px;
+    font-weight: bolder;
+}
+
+.titulo{
+    color: white;
+    font-weight: 700;
+    font-size: 3rem;
+    font-style: italic;
+    text-align: center;
+}
+.cont{
+    margin-top: 20px;
+    border-bottom:  2px solid red;
+    border-top: 2px solid red;
+    justify-content: center;
+    padding: 20px 0px 20px 0px;
+    display: flex;
+
+
+}
+
+.boton1{
+    position: relative;
+    right: 30px;
+}
+
+.boton2{
+    position: relative;
+    left: 30px;
+}
+
+.buton_imge{
+    background: brown;
+    height: 50px;
+}

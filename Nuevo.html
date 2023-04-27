@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/nuevo.css">
+    <link rel="stylesheet" href="css/carru.css">
+</head>
+
+<body>
+    <h1 class="titulo">Delicius Burger</h1>
+    <div class="cont">
+     <div class="boton1">
+       <a href="Hamburguesa.html" class=""><button class="bt">Hamburguesas</button></a>
+     </div>
+       
+     <div class="boton2">
+       <a href="Nuevo.html" class=""><button class="bt">Salchipapas</button></a>
+     </div>
+   </div>
+    <div class="container_carrusel">
+        <div class="mySlides">
+            <img src="img/Salchipapa_Clasica.png"  width="500px" height="350px"  alt="...">
+            
+            <div class="">
+              <h5 class="nombre">Salchipapa clasica</h5>
+              <p class="descripcion">Salchipapa compuesta por hot dog ,papas fritas y ensalada <br><samp class="precio"> Precio: S/ 9.00</samp></p>
+            </div>
+        </div>
+        <div class="mySlides">
+            <img src="img/Salchipapa_con_huevo.png" width="600px" height="350px" alt="...">
+            <div class="">
+              <h5 class="nombre">Salchipapa con Huevo</h5>
+              <p class="descripcion">Salchipapa compuesta por hot dog , papas fritas y huevo <br><samp class="precio"> Precio: S/ 12.00</samp></p>
+            </div>
+        </div>
+        <div class="mySlides">
+            <img src="img/Salchipapa_Mixta.png" width="600px" height="350px" alt="...">
+            <div class="">
+              <h5 class="nombre">Salchipapa Mixta</h5>
+              <p class="descripcion">Salchipapa compuesta por hot dog , papas fritas , huevo y platano frito <br><samp class="precio"> Precio: S/ 15.00</samp></p>
+            </div>
+        </div>
+
+        <div class="mySlides">
+            <img src="img/Salchipapa_Simple.png" width="550px" height="350px" alt="...">
+            <div class="">
+              <h5 class="nombre">Salchipapa Simple</h5>
+              <p class="descripcion">Salchipapa compuesta por hot dog y papas fritas<br><samp class="precio"> Precio: S/ 7.00</samp></p>
+            </div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="butons">
+            <button class="quadrate" onclick="currentSlide(1)"><img src="img/Salchipapa_Clasica.png"  alt=""></button>
+            <button class="quadrate" onclick="currentSlide(2)"><img src="img/Salchipapa_con_huevo.png"  alt=""></button>
+            <button class="quadrate" onclick="currentSlide(3)"><img src="img/Salchipapa_Mixta.png"  alt=""></button>
+            <button class="quadrate" onclick="currentSlide(4)"><img src="img/Salchipapa_Simple.png"  alt=""></button>
+        </div>
+    </div>
+
+    <script>
+    let slideIndex = 1;
+    showSlides(slideIndex)
+
+    setInterval(function() {
+        plusSlides(1);
+    }, 4000);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n)
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n)
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.querySelectorAll(".mySlides");
+        let quadrates = document.querySelectorAll(".quadrate");
+        if (n > slides.length) slideIndex = 1
+        if (n < 1) slideIndex = slides.length
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none"
+        }
+        for (i = 0; i < quadrates.length; i++) {
+            quadrates[i].className = quadrates[i].className.replace("active", "")
+        }
+        slides[slideIndex - 1].style.display = "block";
+        quadrates[slideIndex - 1].className += " active";
+    }
+    </script>
+
+
+</body>
+
+</html>

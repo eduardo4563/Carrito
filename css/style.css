@@ -1,0 +1,475 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.texto{
+    
+    color: white;
+    padding-top: 245px;
+    padding-left: 100px;
+}
+.medio{
+    color: red;
+    font-weight: 700;
+    font-size: 2rem;
+    font-style: italic;
+}
+.grande{
+  
+    font-weight: bold;
+    font-size:3.2rem ;
+    margin-top: -40px;
+}
+.parra{
+    font-size: 1.2rem;
+}
+.pr{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.imagen{
+   
+   height:738px;
+}
+.ima{
+    width: 780px;
+    height: 100%;
+}
+#nd,#nd2{
+    display: none;
+}
+.bts{
+    padding-top: 18px;
+}
+.bt{
+    border: none;
+    background-color: orange;
+    border-radius: 15px;
+    width: 80%;
+    height: 45px;
+}
+.bt:hover{
+    color: black;
+    background-color: white;
+    border-radius: 50px;
+}
+/*MEDIAS QUERYS*/
+/*celuilar*/
+@media (max-width:700px) {
+    .texto{
+        padding: 0;
+        padding-top: 220px;
+        color: white;
+        
+    }
+    .con{
+        padding-left: 35px;
+    }
+    .medio{
+       
+        font-weight: 700;
+        font-size: 1.6rem;
+       
+    }
+    .grande{
+      
+        font-weight: bold;
+        font-size:2.2rem ;
+        margin-top: -30px;
+    }
+    .parra{
+        font-size: 1rem;
+    }
+    .imagen{
+        width: 100%;
+        height: 50%;
+     }
+     .ima{
+         width: 90%;
+         height: 100%;
+     }
+     
+    #nd2{
+        display: block;
+    }
+    .nds{
+        width: 100%;
+    }
+    .bts{
+        padding: 0;
+        background-color: orange;
+        width: 90%;
+        height: 40px;
+        border: none;
+        border-radius: 18px;
+        color: white;
+        font-size: 1rem;
+    }
+    .bts:hover{
+        color: black;
+        background-color: white;
+        border-radius: 50px;
+    }
+    
+}
+
+/*tablets*/
+@media (min-height:1023px) {
+    .texto{
+        padding: 0;
+        padding-top: 220px;
+        color: white;
+        
+    }
+    .con{
+        padding-left: 35px;
+    }
+    .medio{
+       
+        font-weight: 700;
+        font-size: 1.8rem;
+       
+    }
+    .grande{
+      
+        font-weight: bold;
+        font-size:2.8rem ;
+        margin-top: -30px;
+    }
+    .parra{
+        font-size: 1.1rem;
+    }
+    .imagen{
+        width: 100%;
+        height: 50%;
+     }
+     .ima{
+         width: 95%;
+         height: 100%;
+     }
+     
+    #nd2{
+        display: block;
+    }
+    .nds{
+        width: 100%;
+        padding-top: 15px;
+    }
+    .bts{
+        padding: 0;
+        background-color: orange;
+        width: 95%;
+        height: 45px;
+        border: none;
+        border-radius: 18px;
+        color: white;
+        font-size: 1rem;
+    }
+    .bts:hover{
+        color: black;
+        background-color: white;
+        border-radius: 50px;
+    }
+}
+@media (min-width:1500px) {
+    #nd{
+        display: block;
+    }
+}
+
+/*carrito*/
+.container{
+    
+    padding-top: 180px;
+}
+.pri{
+    display: flex;
+    justify-content: space-between;
+}
+.wq{
+
+    width: 450px;
+    height: 450px;
+    
+}
+.ss{
+    width: 100%;
+    
+    color: black;
+   height: 100%
+
+    
+    /*min-height: 100%;
+   
+    color: black;
+    background-color: white;
+    padding: 55px;
+    height: 25%;
+    border-radius: 15px;*/
+    
+}
+.qa{
+    height: 100%;
+   
+    
+}
+.list-group-item{
+
+    margin-left: -32px;
+    
+}
+.sax{
+    width: 750px;
+    
+
+
+    
+}
+.equis{
+    float: right;
+    font-size: 10px;
+}
+.car{
+    display: flex;
+    padding-left: 55px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.s{
+    
+    border-radius: 15px;
+    width:320px;
+    height:460px;
+    padding: 35px;
+    background-color: white;
+    color: black;
+
+
+    
+}
+.card-text{
+    padding-top: 15px;
+}
+.btssx{
+    width: 100%;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid orange;
+    padding-bottom: 11px;
+    font-size: 13px;
+   
+    color:orange;
+    font-weight: bold;
+
+    /*transition: background 0.5s ease;*/
+}
+.textos{
+    font-size: 13px;
+    padding-top: 25px;
+}
+
+/*paginador*/
+.pa{
+    padding-left: 235px;
+}
+#anterior,#siguiente{
+    
+    border: none;
+    border: 2px solid orange ;
+    padding: 7px;
+    width: 150px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    color: orange;
+    
+    transition: background 0.5s ease;
+    font-weight: bold;
+    
+}
+/*#anterior:hover {
+    background: white;
+    color: black;
+    font-weight: normal;
+    border: 2px solid black;
+  }*/
+
+  /*#siguiente:hover {
+    background: white;
+    color: black;
+    font-weight: normal;
+    border: 2px solid black;
+  }*/
+  
+  button:hover i {
+    color: orange;
+  }
+
+
+  #i {
+   
+    margin-left: 20px;
+  }
+  
+  #is{
+    
+    margin-right: 20px;
+  }
+  .arrow1 {
+    animation: slide1 1s ease-in-out infinite;
+    margin-left: 9px;
+  }
+
+  @keyframes slide1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(10px, 0);
+  }
+}
+#sxx{
+    height: 70px;
+}
+.qa h2{
+    color: red;
+    font-weight: bold;
+}
+#carrito{
+    color: white;
+}
+.b{
+    /*background-color: red;*/
+    border: none;
+    
+    color: red;
+    padding: 5px;
+    width: 100%;
+    border-radius: 8px;
+    padding-bottom: 5px;
+    border: 1px solid red;
+}
+
+.p{
+    color:white;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    display: inline-block;
+    border:1px double rgba(255, 255, 255, .25);
+    border-width: 5px 0;
+    padding: 1.5rem 0em;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 85%;
+    text-align: center;
+}   
+.spans{
+    font: 400 1.5em/1 "Oswald", sans-serif;   
+    letter-spacing: 0;
+    padding: .25em 0 .325em;
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0 0 80px rgba(255,255,255,.5);
+    background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+	  -webkit-background-clip: text;
+	  background-clip: text;
+
+      -webkit-text-fill-color: transparent;
+	  -webkit-animation: aitf 80s linear infinite;
+      
+/* Activate hardware acceleration for smoother animations */
+
+	  -webkit-transform: translate3d(0,0,0);
+	  -webkit-backface-visibility: hidden;
+   
+}
+@-webkit-keyframes aitf {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
+}
+
+.card-title{
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+.img-fluid{
+    height: 150px;
+    width: 100%;
+    
+}
+.text-light,.raya{
+    color: white;
+    font-weight: bold;
+}
+.raya{
+    border: 1px double white;
+}
+.let{
+    padding-top: 15px;
+    /*padding-left: 155px;*/
+    text-align:center;
+}
+
+.close{
+  padding-left: 18px;
+}
+.alert{
+    display: none;
+}
+.alert2{
+    display: none;
+}
+.ale{
+    display: block;
+}
+.ale2{
+    display: block;
+}
+.cardz{
+    opacity: 0.8;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+.meto{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+.me{
+    width: 85px;
+    cursor: pointer;
+    
+}
+.yape{
+    width: 40px;
+    cursor: pointer;
+    
+}
+.plin{
+    width: 90px;
+    margin-left: 40px;
+    cursor: pointer;
+    
+}
+#body{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+   
+
+}
+.yas{
+     padding-left: 70px;
+     padding-top: 15px;
+}
+.to{
+    padding-top: 15px;
+    text-align: center;
+}
