@@ -2,181 +2,6 @@
     margin: 0;
     padding: 0;
 }
-.texto{
-    
-    color: white;
-    padding-top: 245px;
-    padding-left: 100px;
-}
-.medio{
-    color: red;
-    font-weight: 700;
-    font-size: 2rem;
-    font-style: italic;
-}
-.grande{
-  
-    font-weight: bold;
-    font-size:3.2rem ;
-    margin-top: -40px;
-}
-.parra{
-    font-size: 1.2rem;
-}
-.pr{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.imagen{
-   
-   height:738px;
-}
-.ima{
-    width: 780px;
-    height: 100%;
-}
-#nd,#nd2{
-    display: none;
-}
-.bts{
-    padding-top: 18px;
-}
-.bt{
-    border: none;
-    background-color: orange;
-    border-radius: 15px;
-    width: 80%;
-    height: 45px;
-}
-.bt:hover{
-    color: black;
-    background-color: white;
-    border-radius: 50px;
-}
-/*MEDIAS QUERYS*/
-/*celuilar*/
-@media (max-width:700px) {
-    .texto{
-        padding: 0;
-        padding-top: 220px;
-        color: white;
-        
-    }
-    .con{
-        padding-left: 35px;
-    }
-    .medio{
-       
-        font-weight: 700;
-        font-size: 1.6rem;
-       
-    }
-    .grande{
-      
-        font-weight: bold;
-        font-size:2.2rem ;
-        margin-top: -30px;
-    }
-    .parra{
-        font-size: 1rem;
-    }
-    .imagen{
-        width: 100%;
-        height: 50%;
-     }
-     .ima{
-         width: 90%;
-         height: 100%;
-     }
-     
-    #nd2{
-        display: block;
-    }
-    .nds{
-        width: 100%;
-    }
-    .bts{
-        padding: 0;
-        background-color: orange;
-        width: 90%;
-        height: 40px;
-        border: none;
-        border-radius: 18px;
-        color: white;
-        font-size: 1rem;
-    }
-    .bts:hover{
-        color: black;
-        background-color: white;
-        border-radius: 50px;
-    }
-    
-}
-
-/*tablets*/
-@media (min-height:1023px) {
-    .texto{
-        padding: 0;
-        padding-top: 220px;
-        color: white;
-        
-    }
-    .con{
-        padding-left: 35px;
-    }
-    .medio{
-       
-        font-weight: 700;
-        font-size: 1.8rem;
-       
-    }
-    .grande{
-      
-        font-weight: bold;
-        font-size:2.8rem ;
-        margin-top: -30px;
-    }
-    .parra{
-        font-size: 1.1rem;
-    }
-    .imagen{
-        width: 100%;
-        height: 50%;
-     }
-     .ima{
-         width: 95%;
-         height: 100%;
-     }
-     
-    #nd2{
-        display: block;
-    }
-    .nds{
-        width: 100%;
-        padding-top: 15px;
-    }
-    .bts{
-        padding: 0;
-        background-color: orange;
-        width: 95%;
-        height: 45px;
-        border: none;
-        border-radius: 18px;
-        color: white;
-        font-size: 1rem;
-    }
-    .bts:hover{
-        color: black;
-        background-color: white;
-        border-radius: 50px;
-    }
-}
-@media (min-width:1500px) {
-    #nd{
-        display: block;
-    }
-}
 
 /*carrito*/
 .container{
@@ -186,6 +11,7 @@
 .pri{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap-reverse;
 }
 .wq{
 
@@ -472,4 +298,16 @@
 .to{
     padding-top: 15px;
     text-align: center;
+}
+@media (max-width:700px) {
+    .sax{
+        width: 450px;
+        
+    }
+    
+    .car{
+        
+        margin: 0;
+        padding: 0;
+    }
 }
