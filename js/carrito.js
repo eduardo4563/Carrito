@@ -83,6 +83,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const DOMcarrito=document.querySelector('#carrito');
     const DOMtotal=document.querySelector('#total');
     const DOMbotonvaciar=document.querySelector('#boton-vaciar');
+    const yape=document.querySelector('#yape');
+    const plin=document.querySelector('#plin');
+    const banco=document.querySelector('#ba')
+    const miLocalStorage = window.localStorage;
+
     const DOMpa=document.querySelector('#toggle-btn');
     var lista = document.getElementById("items");
     var itemsPorPagina = 2;
@@ -94,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     // Obtener el elemento contenedor donde se mostrarán los productos
 
+    
 
     function renderizarProductos(){
         bd.forEach((info)=>{
@@ -151,6 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
         carrito.push(evento.target.getAttribute('marcador'))
         // Actualizamos el carrito 
         renderizarCarrito();
+         // Actualizamos el LocalStorage
+         guardarCarritoEnLocalStorage();
     }
     /**
      * dibuja todos losprocutos guardados en el carrito
@@ -188,9 +196,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         //renderizamos el precio total del html
         DOMtotal.textContent=calcularTotal();
-        document.getElementById("ultimo").textContent = calcularTotal();
-        document.getElementById("ultimos").textContent = calcularTotal();
-        document.getElementById("ultimoss").textContent = calcularTotal();
     }
     
     /**
@@ -205,6 +210,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         //volvemos a renderizar
         renderizarCarrito();
+        // Actualizamos el LocalStorage
+        guardarCarritoEnLocalStorage();
     
         
     }
@@ -231,17 +238,6 @@ document.addEventListener('DOMContentLoaded', () => {
         var si=document.getElementById("si");
         console.log(si)
         if (carrito==0) {
-
-                
-            /*const ales=document.querySelector('#ale');
-            ales.classList.add('ale');
-            setTimeout(function() {
-                $("#ale").fadeOut(1200);
-            },2000);*/
-                //hecho con ajax
-                //var notif=document.getElementById("liveToast");
-                
-                //$('#liveToast').modal('show');
                 const toastTrigger = document.getElementById('boton-vaciar')
                 const toastLiveExample = document.getElementById('liveToast')
                 if (toastTrigger) {
@@ -251,32 +247,50 @@ document.addEventListener('DOMContentLoaded', () => {
                     toast.show()
             
                 }
-                 
-
-                /*setTimeout(function() {
-                    $("#liveToast").fadeOut(1200);
-                },2000);*/
-                
-          
-           
         }else{
             if(carrito ==0){
-                /*const aless=document.querySelector('#alex');
-            aless.classList.add('ale2');
-            setTimeout(function() {
-                $("#alex").fadeOut(1200);
-            },2000);*/
                 console.log('no ai ningun valor')
             
             }
             else{
-                $('#modal-1').modal('show');
-                
-                si.addEventListener("click", cambio_valor);
+                Swal.fire({
+                    
+                    title: '¿Estas seguro de vaciar el carrito de compras?',
+                    text: "No podras revertir esta accion!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Si, eliminarlo!,'
+                    
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                        cambio_valor();
+                        // Borra LocalStorage
+                        localStorage.clear();
+                      Swal.fire(
+                        'Eliminado!',
+                        'Carrito de compras correctamente vaciado.',
+                        'success'
+                      )
+                    }
+                  })
+               
             }
             
             
             
+        }
+    }
+    function guardarCarritoEnLocalStorage () {
+        miLocalStorage.setItem('carrito', JSON.stringify(carrito));
+    }
+
+    function cargarCarritoDeLocalStorage () {
+        // ¿Existe un carrito previo guardado en LocalStorage?
+        if (miLocalStorage.getItem('carrito') !== null) {
+            // Carga la información
+            carrito = JSON.parse(miLocalStorage.getItem('carrito'));
         }
     }
     function pagar() {
@@ -294,28 +308,15 @@ document.addEventListener('DOMContentLoaded', () => {
         
             }
         }else{
-            
-                /*$("#toggle-btn").click(function(){
-                  $("#toggle-example").collapse('toggle'); // toggle collapse
-                });*/
-
-            /*const toastTrigger = document.getElementById('toggle-btn')
-            const toastLiveExample = document.getElementById('toggle-example')
-            if (toastTrigger) {
-            
-                const toast = new bootstrap.Toast(toastLiveExample)
-
-                toast.show()
         
-            }*/
             const collapseElementList = document.querySelectorAll('.collapse')
             const collapseList = [...collapseElementList].map(collapseEl => new bootstrap.Collapse(collapseEl))
         }
     }
     function cambio_valor() {
-            //limiapos los productos guardados
+        //limiapos los productos guardados
         carrito=[];
-            //renderizamos los cambios
+        //renderizamos los cambios
         renderizarCarrito();
       }
     
@@ -339,7 +340,78 @@ document.addEventListener('DOMContentLoaded', () => {
       paginaActual = pagina;
       mostrarItems();
     }
+    function abriryaape(){
+        Swal.fire({
+            title: 'Yape',
+            text: 'Monto a pagar: S/.' + calcularTotal(),
+            imageUrl: '../img/scanner.jpeg',
+            imageWidth: 400,
+            imageHeight: 350,
+            imageAlt: 'Custom image',
+            confirmButtonText: 'Pagar',
+            showCloseButton: true,
+            showCancelButton: true,
+            focusConfirm: false
+            
+        }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Pago exitoso!',
+                'Porfavor acercarse a recoger su pedido',
+                'success'
+              )
+            }
+        })
+    }
 
+
+    function abrirplin(){
+        Swal.fire({
+            title: 'Plin',
+            text: 'Monto a pagar: S/.' + calcularTotal(),
+            imageUrl: '../img/scanner.jpeg',
+            imageWidth: 400,
+            imageHeight: 350,
+            imageAlt: 'Custom image',
+            confirmButtonText: 'Pagar',
+            showCloseButton: true,
+            showCancelButton: true,
+            focusConfirm: false
+            
+        }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Pago exitoso!',
+                'Porfavor acercarse a recoger su pedido',
+                'success'
+              )
+            }
+        })
+    }
+
+    function abrirbanco(){
+        Swal.fire({
+            title: 'Banco',
+            text: 'Monto a pagar: S/.' + calcularTotal(),
+            imageUrl: '../img/scanner.jpeg',
+            imageWidth: 400,
+            imageHeight: 350,
+            imageAlt: 'Custom image',
+            confirmButtonText: 'Pagar',
+            showCloseButton: true,
+            showCancelButton: true,
+            focusConfirm: false
+            
+        }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Pago exitoso!',
+                'Porfavor acercarse a recoger su pedido',
+                'success'
+              )
+            }
+        })
+    }
     document.getElementById("anterior").addEventListener("click", function() {
       if (paginaActual > 1) {
         cambiarPagina(paginaActual - 1);
@@ -357,23 +429,17 @@ document.addEventListener('DOMContentLoaded', () => {
     //eventos
     DOMbotonvaciar.addEventListener('click',vaciarCarrito);
     DOMpa.addEventListener('click',pagar);
+    yape.addEventListener('click',abriryaape);
+    plin.addEventListener('click',abrirplin);
+    banco.addEventListener('click',abrirbanco);
     //iniico 
+    cargarCarritoDeLocalStorage();
     renderizarProductos();
     renderizarCarrito();
     mostrarItems();
+
+    //
+    
   
     
 });
-
-
-
-
-
-
-
-
-
-
-
-
-

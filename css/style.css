@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
 }
-
 /*carrito*/
 .container{
     
@@ -11,12 +10,12 @@
 .pri{
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
 }
 .wq{
 
     width: 450px;
-    height: 450px;
+    height: 550px;
     
 }
 .ss{
@@ -47,8 +46,6 @@
 }
 .sax{
     width: 750px;
-    
-
 
     
 }
@@ -58,7 +55,7 @@
 }
 .car{
     display: flex;
-    padding-left: 55px;
+    margin-left: 55px;
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -97,8 +94,15 @@
 }
 
 /*paginador*/
+.pas2{
+    width: 350px;
+    margin-left: 210px;
+
+}
 .pa{
-    padding-left: 235px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
 #anterior,#siguiente{
     
@@ -114,19 +118,7 @@
     font-weight: bold;
     
 }
-/*#anterior:hover {
-    background: white;
-    color: black;
-    font-weight: normal;
-    border: 2px solid black;
-  }*/
 
-  /*#siguiente:hover {
-    background: white;
-    color: black;
-    font-weight: normal;
-    border: 2px solid black;
-  }*/
   
   button:hover i {
     color: orange;
@@ -300,14 +292,88 @@
     text-align: center;
 }
 @media (max-width:700px) {
+    .wq{
+        height: 405px;
+        margin-top: 190px;
+    }
     .sax{
-        width: 450px;
+        width: 100%;
+        height: 1000px;    
+    }
+    .car{
+        margin: 0;
+       
+        height:460px;
+        margin-top: 150px;
+    }
+    .s{
+    
+        border-radius: 15px;
+        width: 100%;
+        padding: 35px;
+        background-color: white;
+        color: black;
+    }
+    .pas2{
+        width: 80%;
+        margin: 0;
+        margin-top: -580px;
+        margin-left: 40px;
+    }
+    .pa{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+    #anterior,#siguiente{
+    
+        font-size: 13px;
         
     }
-    
+}
+
+
+
+@media (min-height:1023px) {
+    .container{
+        max-width: 500px;
+    }
+    .wq{
+        height: 405px;
+        margin-top: 190px;
+    }
+    .sax{
+        width: 100%;
+        height: 1000px;    
+    }
     .car{
-        
         margin: 0;
-        padding: 0;
+        width: 100%;
+        height:460px;
+        margin-top: 150px;
+    }
+    .s{
+    
+        border-radius: 15px;
+        width: 100%;
+        padding: 35px;
+        background-color: white;
+        color: black;
+    }
+    .pas2{
+        width: 80%;
+        margin: 0;
+        margin-top: -580px;
+        margin-left: 40px;
+    }
+    .pa{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+    #anterior,#siguiente{
+    
+        font-size: 13px;
+        
     }
 }
