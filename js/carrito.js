@@ -358,8 +358,17 @@ document.addEventListener('DOMContentLoaded', () => {
               Swal.fire(
                 'Pago exitoso!',
                 'Porfavor acercarse a recoger su pedido',
-                'success'
-              )
+                'success',
+                    
+                ).then(function(){
+                    cambio_valor();
+                    // Borra LocalStorage
+                    localStorage.clear();
+                    window.location="../index.html";
+                    //ocation.replace('../index.html')
+                    
+              })
+              
             }
         })
     }
@@ -384,7 +393,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Pago exitoso!',
                 'Porfavor acercarse a recoger su pedido',
                 'success'
-              )
+              ).then(function(){
+                cambio_valor();
+                // Borra LocalStorage
+                localStorage.clear();
+                window.location="../index.html";
+                //ocation.replace('../index.html')
+                
+                })
             }
         })
     }
@@ -408,7 +424,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Pago exitoso!',
                 'Porfavor acercarse a recoger su pedido',
                 'success'
-              )
+              ).then(function(){
+                cambio_valor();
+                // Borra LocalStorage
+                localStorage.clear();
+                window.location="../index.html";
+                //ocation.replace('../index.html')
+
+                })
             }
         })
     }
